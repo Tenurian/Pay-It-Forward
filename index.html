@@ -9,56 +9,59 @@
     <link type="text/css" rel="stylesheet" href="main.css">
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <!--
-<nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="80">
+<body>
     <div class="container-fluid">
--->
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-        <!-- class="pagination" -->
-        <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-        <li><a href="#menu" role="tab" data-toggle="tab">Menu</a></li>
-        <li><a href="#schedule" role="tab" data-toggle="tab">Schedule</a></li>
-        <li><a href="#contact" role="tab" data-toggle="tab">Contact Us</a></li>
-    </ul>
-    <!--
-        </div>
-    </nav>
--->
-
-    <div class="tab-content container-fluid bg">
-        <div id="home" class="row text-center tab-pane active">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <h1>Home</h1>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+                        <li><a href="#menu" role="tab" data-toggle="tab">Menu</a></li>
+                        <li><a href="#schedule" role="tab" data-toggle="tab">Schedule</a></li>
+                        <li><a href="#contact" role="tab" data-toggle="tab">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-sm-3"></div>
-        </div>
+        </nav>
 
-        <div id="menu" class="row text-center tab-pane">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <h1>Menu</h1>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div id="content" class="col-sm-8">
+                <div class="spacer"></div>
+                <div class="tab-content text-center">
 
-        <div id="schedule" class="row text-center tab-pane">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <h1>Schedule</h1>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
+                    <div id="home" class="tab-pane fade in active">
+                        <div>
+                            <h1>Home</h1>
+                        </div>
+                    </div>
 
-        <div id="contact" class="row text-center tab-pane">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <h1>Contact Us</h1>
+                    <div id="menu" class="tab-pane fade">
+                        <div>
+                            <h1>Menu</h1>
+                        </div>
+                    </div>
+
+                    <div id="schedule" class="tab-pane fade">
+                        <div>
+                            <h1>Schedule</h1>
+                        </div>
+                    </div>
+
+                    <div id="contact" class="tab-pane fade">
+                        <div>
+                            <h1>Contact Us</h1>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
         </div>
     </div>
+
 
     <script src="Scripts/script.js"></script>
 </body>
