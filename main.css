@@ -1,3 +1,11 @@
 #content {
     border: 1px solid red;
 }
+
+.bg {
+    background-color: white;
+}
+
+.bg-alt {
+    background-color: darkgrey;
+}
