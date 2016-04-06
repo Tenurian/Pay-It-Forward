@@ -2,6 +2,7 @@
 @bgHighlight : darkgrey;
 @colDefault : white;
 @colHighlight : #1c1c1c;
+@borderRadius: 5px;
 * {
     background-color: transparent;
 }
@@ -21,7 +22,7 @@ body {
 }
 
 .tab-content {
-    padding: 5px;
+    padding: @borderRadius;
 }
 
 .navbar-default {
@@ -45,31 +46,32 @@ body {
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
-    -moz-border-radius-bottomright: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: @borderRadius;
+    -webkit-border-bottom-right-radius: @borderRadius;
+    border-bottom-right-radius: @borderRadius;
+    -moz-border-radius-bottomleft: @borderRadius;
+    -webkit-border-bottom-left-radius: @borderRadius;
+    border-bottom-left-radius: @borderRadius;
 }
 
 .nav-pills > li > a,
 .nav-tabs > li > a {
     margin-left: 2px;
     margin-right: 2px;
-    font-size: 2em;
+    font-size: 1.9em;
     color: @colDefault;
     background-color: @colHighlight;
     //    /*    border: medium none;*/
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
-    -moz-border-radius-bottomright: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: @borderRadius;
+    -webkit-border-bottom-right-radius: @borderRadius;
+    border-bottom-right-radius: @borderRadius;
+    -moz-border-radius-bottomleft: @borderRadius;
+    -webkit-border-bottom-left-radius: @borderRadius;
+    border-bottom-left-radius: @borderRadius;
+    white-space: nowrap;
 }
 
 .nav-pills > li > a:hover,
@@ -82,4 +84,26 @@ body {
     border-right: 2px solid black;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+#more-spacers {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #more-spacers {
+        display: block;
+    }
+    .nav-pills > li > a,
+    .nav-tabs > li > a {
+        -moz-border-radius: @borderRadius;
+        -webkit-border-radius: @borderRadius;
+        border-radius: @borderRadius;
+    }
+    .nav-pills > li > a:hover,
+    .nav-tabs > li > a:hover {
+        color: black;
+        border: 2px solid black;
+        margin: 0;
+    }
 }
