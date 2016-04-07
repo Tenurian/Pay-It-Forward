@@ -92,7 +92,7 @@ body {
     }
 }
 
-#contactUs {
+.contactUs {
     border: 5px solid black;
     border-color: black;
     -moz-border-radius: 5px;
