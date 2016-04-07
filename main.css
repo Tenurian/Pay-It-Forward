@@ -92,6 +92,11 @@ body {
     }
 }
 
+#login {
+    margin: 0 auto;
+    width: 50%;
+}
+
 .contactUs {
     border: 5px solid black;
     border-color: black;
