@@ -92,16 +92,26 @@ body {
     }
 }
 
-#contactUs {
+.contactUs {
     border: 5px solid black;
     border-color: black;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
-    -moz-border-radius-: 5px;
+    -moz-border-radius: 5px;
 }
 
 .cinfo {
     font-size: 20px;
     margin: 20px;
+}
+
+#discription {
+    font-size: 18px;
+    margin: auto;
+    width: 80%;
+}
+
+#header {
+    text-align: left;
 }
