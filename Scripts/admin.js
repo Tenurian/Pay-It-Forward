@@ -5,6 +5,8 @@ code.google.com/p/crypto-js
 code.google.com/p/crypto-js/wiki/License
 */
 
+var output = document.getElementById('output');
+
 /*   THIS IS FOR SETTING THE USER AND PASSWORD VARS   */
 //console.log(CryptoJS.SHA256("admin") + "");
 //console.log(CryptoJS.SHA256("password") + "");
@@ -273,11 +275,110 @@ function processForm(e) {
     /* BE DAMN SURE TO REMOVE THESE FOR SECURITY PURPOSES */
     if (CryptoJS.SHA256(login_username) == username && CryptoJS.SHA256(login_password) == password) {
         //hide the login well and display the file info
-        $('#my-form').hide();
-        document.getElementById('login').innerHTML = "<h1>Welcome!</h1>";
+        if (document.getElementById('login-failed') != null) {
+            $("#login-failed").fadeOut();
+            $('#login').fadeOut();
+        } else {
+            $('#login').fadeOut();
+        }
+        output.innerHTML = '<div id="login-success" class="alert alert-success fade in out"><strong>Success!</strong> You have successfully logged in <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>';
+
+
+        //        $.getJSON("ajax/stuff.json", function (data) {
+        //            var items = [];
+        //            $.each(data, function (key, val) {
+        //                items.push("<li id='" + key + "'>" + val + "</li>");
+        //            });
+        //
+        //            $("<ul/>", {
+        //                "class": "my-new-list",
+        //                html: items.join("")
+        //            }).appendTo("body");
+        //        });
+
+        $.ajax({
+            dataType: "json",
+            url: "ajax/stuff.json",
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            },
+            success: function (data) {
+                var content = "";
+                console.log("Success!");
+                /* guests that ARE attending */
+                content += "<div class='section text-left'>";
+                content += "<h4>Guests Attending</h4>";
+                content += "<table class='table table-hover'><thead><tr><th>Name</th><th>E-mail</th><th>Number of Guests</th><th>Comments / Dietary Needs</th></tr></thead><tbody>";
+
+                $.each(data.attendees, function (index, value) {
+                    content += "<tr>";
+                    content += "<td>" + value.name + "</td>";
+                    content += "<td>" + value.email + "</td>";
+                    content += "<td>" + value.guests + "</td>";
+                    content += "<td>" + value.comments + "</td>";
+                    content += "</tr>";
+
+                });
+
+                content += "</tbody></table>"
+                    //<table class="table table-hover">
+                    //    <thead>
+                    //      <tr>
+                    //        <th>Firstname</th>
+                    //        <th>Lastname</th>
+                    //        <th>Email</th>
+                    //      </tr>
+                    //    </thead>
+                    //    <tbody>
+                    //      <tr>
+                    //        <td>July</td>
+                    //        <td>Dooley</td>
+                    //        <td>july@example.com</td>
+                    //      </tr>
+                    //    </tbody>
+                    //  </table>
+
+                content += "</div>";
+
+                /* guests not attending */
+                content += "<div class='section text-left'>";
+                content += "<h4>Guests Not Attending</h4>";
+
+
+                content += '<table class="table table-hover"><thead><tr><th>Name</th><th>E-mail</th><th>Reason Not Attending</th></tr></thead><tbody>';
+
+                $.each(data.absentees, function (index, value) {
+                    content += "<tr>";
+                    content += "<td>" + value.name + "</td>";
+                    content += "<td>" + value.email + "</td>";
+                    content += "<td>" + value.reason + "</td>";
+                    content += "</tr>";
+
+                });
+
+                content += "</tbody></table></div>";
+
+                output.innerHTML += content;
+            }
+        });
+
+        setTimeout(function () {
+            $("#login-success").fadeOut(200);
+        }, 1000);
+
+
     } else {
-        alert("Username or password are incorrect");
-        window.location.href = "admin.html";
+        //        alert("Username or password are incorrect");
+
+        if (document.getElementById('login-failed') == null) {
+            output.innerHTML += '<div id="login-failed" class="alert alert-danger"><strong>Incorrect!</strong> The Username or Password entered was incorrect <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>';
+        } else {
+            var flash = 200;
+            $("#login-failed").fadeOut(flash);
+            $("#login-failed").fadeIn(flash);
+        }
     }
 
     // You must return false to prevent the default form behavior
