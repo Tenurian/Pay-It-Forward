@@ -1,0 +1,23 @@
+{
+    attendees: [
+        {
+            name: 'John Doe',
+            guests: 2,
+            email: "johndoe@email.com",
+            comments: "Gluten-free"
+        },
+        {
+            name: 'Sara Jane',
+            guests: 1,
+            email: 'sjane@amazon.com',
+            comments: 'Need bananas'
+        }
+    ],
+    absentees: [
+        {
+            name: 'John Smith',
+            email: 'mrwhoisadoctor@tardis.net',
+            reason: 'Busy saving the world (again)'
+        }
+    ]
+}
