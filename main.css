@@ -92,7 +92,7 @@ body {
     }
 }
 
-#contactUs {
+.contactUs {
     border: 5px solid black;
     border-color: black;
     -moz-border-radius: 5px;
@@ -106,12 +106,12 @@ body {
     margin: 20px;
 }
 
-#discription {
+.discription {
     font-size: 18px;
     margin: auto;
     width: 80%;
 }
 
-#header {
+.header {
     text-align: left;
 }
