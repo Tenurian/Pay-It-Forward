@@ -132,10 +132,6 @@ footer {
     bottom: 0;
     width: 100%;
     /*Make the entire footer grey*/
-    /*    background-color: #aeaeae;*/
-}
-
-#daRealFooter {
-    padding: 10px;
     background-color: #aeaeae;
+    padding: 10px;
 }

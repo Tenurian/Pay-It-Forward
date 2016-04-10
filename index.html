@@ -10,98 +10,132 @@
 </head>
 
 <body>
-    <div id="wrap">
-        <div class="container-fluid">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <ul class="nav nav-pills nav-justified" role="tablist">
-                            <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-                            <li><a href="#menu" role="tab" data-toggle="tab">Menu</a></li>
-                            <li><a href="#schedule" role="tab" data-toggle="tab">Schedule</a></li>
-                            <li><a href="#contact" role="tab" data-toggle="tab">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div id="content" class="col-sm-8">
-                    <div id="more-spacers">
-                        <div class="spacer"></div>
-                        <div class="spacer"></div>
-                        <div class="spacer"></div>
-                        <div class="spacer"></div>
-                    </div>
+                <div class="col-sm-8">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+                        <li><a href="#menu" role="tab" data-toggle="tab">Menu</a></li>
+                        <li><a href="#schedule" role="tab" data-toggle="tab">Schedule</a></li>
+                        <li><a href="#contact" role="tab" data-toggle="tab">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div id="content" class="col-sm-8">
+                <div id="more-spacers">
                     <div class="spacer"></div>
-                    <div class="tab-content text-center">
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="spacer"></div>
+                <div class="tab-content text-center">
 
-                        <div id="home" class="tab-pane fade in active">
-                            <div>
-                                <h1>Home</h1>
-                            </div>
-                        </div>
+                    <div id="home" class="tab-pane fade in active">
+                        <div>
+                            <h1>Home</h1>
 
-                        <div id="menu" class="tab-pane fade">
-                            <div>
-                                <h1>Menu</h1>
-                                <div class="contactUs">
-                                    <div class="cinfo">
-                                        <div class='discription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</div>
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Modal Header</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Some text in the modal.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div id="schedule" class="tab-pane fade">
-                            <div>
-                                <h1>Schedule</h1>
-                                <div class="contactUs">
-                                    <div class="cinfo">
-                                        <h3 class="header">Dinner: XX:XX</h3>
-                                        <div class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</div>
-                                    </div>
+                    <div id="menu" class="tab-pane fade">
+                        <div>
+                            <h1>Menu</h1>
+                            <div class="contactUs">
+                                <div class="cinfo">
+                                    <div class='discription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <h3 class="header">Dancing: XX:XX</h3>
+                    <div id="schedule" class="tab-pane fade">
+                        <div>
+                            <h1>Schedule</h1>
+                            <div class="contactUs">
+                                <div class="cinfo">
+                                    <h3 class="header">Dinner: XX:XX</h3>
                                     <div class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</div>
                                 </div>
 
+                                <h3 class="header">Dancing: XX:XX</h3>
+                                <div class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</div>
                             </div>
-                        </div>
 
-                        <div id="contact" class="tab-pane fade">
-                            <div>
-                                <h1>Contact Us</h1>
-                                <div class="contactUs">
-                                    <div class="cinfo">Facebook group:<a href="#">Hill Crest High Reuniuon</a></div>
-                                    <div class="cinfo">Email 1:<a href="#">yadayada@holycrap.screwthis</a></div>
-                                    <div class="cinfo"> Email 2:<a href="#">yadayada@holycrap.screwthis</a></div>
-                                    <div class="cinfo">Phone:666-6767</div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <div id="contact" class="tab-pane fade">
+                        <div>
+                            <h1>Contact Us</h1>
+                            <div class="contactUs">
+                                <div class="cinfo">Facebook group:<a href="#">Hill Crest High Reuniuon</a></div>
+                                <div class="cinfo">Email 1:<a href="#">yadayada@holycrap.screwthis</a></div>
+                                <div class="cinfo"> Email 2:<a href="#">yadayada@holycrap.screwthis</a></div>
+                                <div class="cinfo">Phone:666-6767</div>
                             </div>
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
+                    <div class="col-sm-2"></div>
                 </div>
             </div>
-
         </div>
 
     </div>
 
+
+    <footer class="text-center">
+        <a href="admin.html">
+            <div class="btn btn-success">Admin Logon
+            </div>
+        </a>
+    </footer>
+    <!--
+
     <footer id="footer" class="footer">
         <div class="container-fluid">
+
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div id="daRealFooter" class="col-sm-8">
-                    <a href="admin.html">Admin Logon</a>
+                <div id="daRealFooter" class="text-center col-sm-8">
+                    <a href="admin.html">
+                        <div class="btn btn-success">Admin Logon
+                        </div>
+                    </a>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
         </div>
     </footer>
+-->
 
     <script src="Scripts/script.js"></script>
 </body>
