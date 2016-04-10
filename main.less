@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 @bgDefault : black;
 @bgHighlight : darkgrey;
 @colDefault : white;
@@ -7,14 +8,74 @@
     background-color: transparent;
 }
 
+.circles {
+    background-color: darkgreen;
+    background-image: url(Assets/MOAR_CIRCLES.png);
+    background-repeat: repeat;
+    background-size: 100px 100px;
+}
+
 body {
     height: 100%;
-    background-color: @bgDefault;
+    .circles;
+    //    .use-alt-bg;
+}
+
+.use-alt-bg {
+    background-color: black;
+}
+
+#sidebar-overlay {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-53%);
+    width: 100%;
+    z-index: 55;
 }
 
 #content {
     background-color: white;
-    height: 9999px;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.content-main {
+    .overlay;
+    z-index: 59;
+}
+
+.content-back {
+    .overlay;
+    z-index: 1;
+}
+
+.content-back-col {
+    padding: 0px;
+    height: 1200px;
+}
+
+.cbc-def {
+    background-color: darkgreen;
+    .circles;
+}
+
+.cbc-alt {
+    background-color: @colDefault;
+}
+
+.sidebar {
+    padding: 0px;
+}
+
+.sidebar-img {
+    vertical-align: middle;
+    width: 100% !important;
+    height: auto;
 }
 
 .spacer {
@@ -91,6 +152,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
     #more-spacers {
         display: block;
     }
@@ -142,8 +206,46 @@ footer {
     width: 100%;
     background-color: #aeaeae;
     padding: 10px;
+    z-index: 9999;
 }
 
 .header {
     text-align: left;
+}
+
+h1 {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Pacifico';
+    font-size: 50px;
+    padding: 10px;
+}
+
+.videoWrapperOuter {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videoWrapperInner {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 50%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videoWrapperInner iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#husky {
+    height: 125px;
+    width: auto;
 }

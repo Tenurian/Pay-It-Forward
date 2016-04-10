@@ -283,19 +283,6 @@ function processForm(e) {
         }
         output.innerHTML = '<div id="login-success" class="alert alert-success fade in out"><strong>Success!</strong> You have successfully logged in <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>';
 
-
-        //        $.getJSON("ajax/stuff.json", function (data) {
-        //            var items = [];
-        //            $.each(data, function (key, val) {
-        //                items.push("<li id='" + key + "'>" + val + "</li>");
-        //            });
-        //
-        //            $("<ul/>", {
-        //                "class": "my-new-list",
-        //                html: items.join("")
-        //            }).appendTo("body");
-        //        });
-
         $.ajax({
             dataType: "json",
             url: "stuff.json",
