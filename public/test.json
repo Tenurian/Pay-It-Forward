@@ -1,0 +1,22 @@
+{
+    "attendees": [
+        {
+            "name": "John Doe",
+            "guests": 2,
+            "email": "johndoe@email.com",
+            "comments": "Gluten-free"
+        },
+        {
+            "name": "Sara Jane",
+            "guests": 1,
+            "email": "sjane@amazon.com",
+            "comments": "Need bananas"
+        },
+        {
+            "name": "Jerry Pay",
+            "guests": -1,
+            "email": "jpay@neumont.edu",
+            "comments": "Website Manager"
+        }
+    ]
+}
