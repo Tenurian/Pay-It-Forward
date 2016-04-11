@@ -11,6 +11,46 @@
 
 <body>
 
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div id="sign-up-modal" class="modal-content" data-backdrop="static">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign up here!</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="sign-up">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input class="form-control" type="text" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address:</label>
+                            <input class="form-control" type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests:</label>
+                            <input class="form-control" type="number" id="guests" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Additional Comments / Dietary Needs</label>
+                            <textarea class="form-control" rows="5" id="comments"></textarea>
+                        </div>
+                        <br>
+                        <input type="submit" class="btn btn-success">
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div class="content-back">
         <div class="container-fluid">
             <div class="row">
@@ -28,7 +68,7 @@
     </div>
 
     <div class="img-container left">
-        <img class="sidebar-img" src="Assets/Sidebar%20yearbook.jpg">
+        <img tooltip="Images provided by Gerald Pay" class="sidebar-img" src="Assets/Sidebar%20yearbook.jpg">
     </div>
 
 
@@ -70,8 +110,12 @@
                                 <div class="spacer"></div>
 
                                 <div id="header-ish">
-                                    <img id="husky" src="Assets/HuskyImage.jpg">
-                                    <h1>Welcome class of '66</h1>
+                                    <div class="header-content">
+                                        <img id="husky" src="Assets/HuskyLogo.png">
+                                    </div>
+                                    <div class="header-content">
+                                        <h1>Welcome class of '66</h1>
+                                    </div>
                                 </div>
 
                                 <div class="spacer"></div>
@@ -89,8 +133,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-info btn-lg bort" data-toggle="modal" data-target="#myModal">Sign Up!</button>
                         </div>
-
 
                         <div id="menu" class="tab-pane fade">
                             <div>
@@ -103,9 +147,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-info btn-lg bort" data-toggle="modal" data-target="#myModal">Sign Up!</button>
                         </div>
-
-
 
                         <div id="schedule" class="tab-pane fade">
                             <div>
@@ -122,9 +165,8 @@
                                 </div>
 
                             </div>
-
+                            <button type="button" class="btn btn-info btn-lg bort" data-toggle="modal" data-target="#myModal">Sign Up!</button>
                         </div>
-
 
                         <div id="contact" class="tab-pane fade">
                             <div>
@@ -136,6 +178,7 @@
                                     <div class="cinfo">Phone:666-6767</div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-info btn-lg bort" data-toggle="modal" data-target="#myModal">Sign Up!</button>
                         </div>
                     </div>
                 </div>
@@ -150,7 +193,7 @@
 
     <footer class="text-center">
         <a href="admin.html">
-            <div class="btn btn-success">Admin Logon
+            <div class="btn btn-success">Admin Login
             </div>
         </a>
     </footer>
