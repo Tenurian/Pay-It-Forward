@@ -18,11 +18,17 @@
 
 $('#sign-up').submit(function () {
     console.log("WHEEEEEEE");
+    var name = document.getElementById('name'),
+        email = document.getElementById('email'),
+        guests = document.getElementById('guests'),
+        comments = document.getElementById('comments');
 
-    console.log(document.getElementById('name').value);
-    console.log(document.getElementById('email').value);
-    console.log(document.getElementById('guests').value);
-    console.log(document.getElementById('comments').value);
+    console.log(name.value);
+    console.log(email.value);
+    console.log(guests.value);
+    console.log(comments.value);
+
+
 
     return false;
 });
