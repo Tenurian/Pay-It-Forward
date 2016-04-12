@@ -1,19 +1,5 @@
-/*
-CryptoJS v3.1.2
-code.google.com/p/crypto-js
-(c) 2009-2013 by Jeff Mott. All rights reserved.
-code.google.com/p/crypto-js/wiki/License
-*/
+console.log("PassChange loaded");
 
-var output = document.getElementById('output');
-
-/*   THIS IS FOR SETTING THE USER AND PASSWORD VARS   */
-//console.log(CryptoJS.SHA256("admin") + "");
-//console.log(CryptoJS.SHA256("password") + "");
-
-/*CHANGE THESE TO THE REQUESTED ADMIN LOGON INFORMATION*/
-var username = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 ",
-    password = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8";
 
 var CryptoJS = CryptoJS || function (h, s) {
     var f = {},
@@ -267,87 +253,44 @@ var CryptoJS = CryptoJS || function (h, s) {
     s.HmacSHA256 = g._createHmacHelper(f)
 })(Math);
 
-function processForm(e) {
-    if (e.preventDefault) e.preventDefault();
-    var login_username = document.getElementById("username").value,
-        login_password = document.getElementById("password").value;
 
-    window.location.href = "/admin/post/" + CryptoJS.SHA256(login_username) + "+" + CryptoJS.SHA256(login_password);
-    //
-    //    /* BE DAMN SURE TO REMOVE THESE FOR SECURITY PURPOSES */
-    //
-    //    var usernameFound = false,
-    //        passwordFound = false;
-    //
-    //
-    //    if (CryptoJS.SHA256(login_username) == username && CryptoJS.SHA256(login_password) == password) {
-    //        //hide the login well and display the file info
-    //        if (document.getElementById('login-failed') != null) {
-    //            $("#login-failed").fadeOut();
-    //            $('#login').fadeOut();
-    //        } else {
-    //            $('#login').fadeOut();
-    //        }
-    //        output.innerHTML = '<div id="login-success" class="alert alert-success fade in out"><strong>Success!</strong> You have successfully logged in <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>';
-    //
-    //        $.ajax({
-    //            dataType: "json",
-    //            url: "stuff.json",
-    //            error: function (jqXHR, textStatus, errorThrown) {
-    //                console.log(jqXHR);
-    //                console.log(textStatus);
-    //                console.log(errorThrown);
-    //            },
-    //            success: function (data) {
-    //                var content = "";
-    //                console.log("Success!");
-    //                /* guests that ARE attending */
-    //                content += "<div class='section text-left'>";
-    //                content += "<h4>Guests Attending</h4>";
-    //                content += "<table class='table table-hover'><thead><tr><th>Name</th><th>E-mail</th><th>Number of Guests</th><th>Comments / Dietary Needs</th></tr></thead><tbody>";
-    //
-    //                $.each(data.attendees, function (index, value) {
-    //                    content += "<tr>";
-    //                    content += "<td>" + value.name + "</td>";
-    //                    content += "<td>" + value.email + "</td>";
-    //                    content += "<td>" + value.guests + "</td>";
-    //                    content += "<td>" + value.comments + "</td>";
-    //                    content += "</tr>";
-    //
-    //                });
-    //
-    //                content += "</tbody></table>"
-    //
-    //                content += "</div>";
-    //
-    //                output.innerHTML += content;
-    //            }
-    //        });
-    //
-    //        setTimeout(function () {
-    //            $("#login-success").fadeOut(200);
-    //        }, 1000);
-    //
-    //
-    //    } else {
-    //        //        alert("Username or password are incorrect");
-    //
-    //        if (document.getElementById('login-failed') == null) {
-    //            output.innerHTML += '<div id="login-failed" class="alert alert-danger"><strong>Incorrect!</strong> The Username or Password entered was incorrect <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>';
-    //        } else {
-    //            var flash = 200;
-    //            $("#login-failed").fadeOut(flash);
-    //            $("#login-failed").fadeIn(flash);
-    //        }
-    //    }
-    //
-    //    // You must return false to prevent the default form behavior
-    //    return false;
-}
+$("#passChange").on('click', function () {
+    var login = false;
 
-var form = document.getElementById('my-form');
-if (form.attachEvent) {
-    form.attachEvent("submit", processForm);
-} else {
-    form.addEventListener("submit", processForm);
-}
+    if (document.getElementById("newPass1").value.length >= 8 && document.getElementById("newPass2").value.length >= 8) {
+        $.ajax({
+            dataType: "json",
+            url: "../../users.json",
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            },
+            success: function (data) {
+                $.each(data.users, function (index, value) {
+                    //                    console.log("input password: " + CryptoJS.SHA256(document.getElementById("oldPass").value));
+                    //                    console.log("value.password: " + value.password);
+                    //                    console.log("input username: " + document.getElementById("userID").innerHTML);
+                    //                    console.log("value.username: " + value.username + "\n\n");
+                    if (value.password == CryptoJS.SHA256(document.getElementById("oldPass").value)) {
+                        if (value.username == document.getElementById("userID").innerHTML) {
+                            if (confirm("Are you sure you want to change your password?")) {
+                                login = true;
+                                //                                console.log("Password would be changed");
+                                window.location.href = "../../admin/pass/" + document.getElementById("userID").innerHTML + "+" + CryptoJS.SHA256(document.getElementById("newPass1").value);
+                            }
+                        }
+                    }
+                });
+                if (!login) {
+                    alert("Old Password is incorrect");
+                }
+            }
+        });
+    } else {
+        alert("Your new password cannot be less than 8 characters");
+    }
+
+    return false;
+
+});
